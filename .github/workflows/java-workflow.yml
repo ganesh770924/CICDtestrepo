@@ -20,7 +20,7 @@ jobs:
     needs: setup-jdk
     uses: ganesh770924/Github-Reusable-actions/.github/workflows/build-with-maven.yml@main
     with:
-      pom_file-path: 'pom.xml'
+      pom-file-path: './pom.xml'
 
   # run-unit-tests:
   #   needs: build-with-maven
