@@ -8,7 +8,7 @@ on:
 
 jobs:
   checkout-code:
-    uses: ganesh770924/Github-Reusable-actions/.github/workflows/checkout-code.yml@main
+    uses: ganesh770924/Github-Reusable-actions/.github/workflows/checkout-code.yaml@main
 
   setup-jdk:
     needs: checkout-code
