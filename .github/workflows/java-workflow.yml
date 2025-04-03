@@ -1,0 +1,39 @@
+name: Caller Workflow
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  checkout-code:
+    uses: ganesh770924/Github-Reusable-actions/.github/workflows/checkout-code.yml@main
+
+  setup-jdk:
+    needs: checkout-code
+    uses: ganesh770924/Github-Reusable-actions/.github/workflows/setup-jdk.yml@main
+    with:
+      java-version: '11'
+
+  build-with-maven:
+    needs: setup-jdk
+    uses: ganesh770924/Github-Reusable-actions/.github/workflows/build-with-maven.yml@main
+
+  run-unit-tests:
+    needs: build-with-maven
+    uses: ganesh770924/Github-Reusable-actions/.github/workflows/run-unit-tests.yml@main
+
+  login-docker-hub:
+    needs: run-unit-tests
+    uses: ganesh770924/Github-Reusable-actions/.github/workflows/login-docker-hub.yml@main
+    with:
+      docker_username: ${{ secrets.DOCKER_USERNAME }}
+      docker_password: ${{ secrets.DOCKER_PASSWORD }}
+
+  build-push-docker:
+    needs: login-docker-hub
+    uses:  ganesh770924/Github-Reusable-actions/.github/workflows/build-push-docker.yml@main
+    with:
+      docker_username: ${{ secrets.DOCKER_USERNAME }}
+      docker_password: ${{ secrets.DOCKER_PASSWORD }}
