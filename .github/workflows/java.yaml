@@ -12,7 +12,7 @@ jobs:
 
   setup-jdk:
     needs: checkout-code
-    uses:  ganesh770924/Github-Reusable-actions/.github/workflows/setup-jdk.yml@main
+    uses: ganesh770924/Github-Reusable-actions/.github/workflows/setup-jdk.yml@main
     with:
       java-version: '11'
 
