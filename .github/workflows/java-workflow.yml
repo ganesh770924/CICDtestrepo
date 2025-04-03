@@ -7,14 +7,14 @@ on:
     branches: [ main ]
 
 jobs:
-  # checkout-code:
-  #   uses: ganesh770924/Github-Reusable-actions/.github/workflows/checkout-code.yaml@main
+  checkout-code:
+    uses: ganesh770924/Github-Reusable-actions/.github/workflows/checkout-code.yaml@main
 
   setup-jdk:
     # needs: checkout-code
     uses: ganesh770924/Github-Reusable-actions/.github/workflows/setup-jdk.yml@main
     with:
-      java-version: '17'
+      java-version: '11'
   
   # build-with-gradle:
   #   needs: [checkout-code,setup-jdk]
