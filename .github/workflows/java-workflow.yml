@@ -14,7 +14,7 @@ jobs:
     # needs: checkout-code
     uses: ganesh770924/Github-Reusable-actions/.github/workflows/setup-jdk.yml@main
     with:
-      java-version: '11'
+      java-version: '17'
   
   # build-with-gradle:
   #   needs: [checkout-code,setup-jdk]
@@ -25,11 +25,11 @@ jobs:
       
   
 
-  checkout-maven-build:
-    needs: setup-jdk
-    uses: ganesh770924/Github-Reusable-actions/.github/workflows/checkout-maven-build.yml@main
-    with:
-      pom-file-path: 'pom.xml'
+  # checkout-maven-build:
+  #   needs: setup-jdk
+  #   uses: ganesh770924/Github-Reusable-actions/.github/workflows/checkout-maven-build.yml@main
+  #   with:
+  #     pom-file-path: 'pom.xml'
 
   # run-unit-tests:
   #   needs: build-with-maven
