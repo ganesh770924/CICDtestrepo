@@ -17,7 +17,7 @@ jobs:
       java-version: '11'
   
   build-with-gradle:
-    #needs: checkout-code
+    needs: checkout-code
     uses: ganesh770924/Github-Reusable-actions/.github/workflows/gradle-workflow.yml@main
     with:
       gradle-task: build
