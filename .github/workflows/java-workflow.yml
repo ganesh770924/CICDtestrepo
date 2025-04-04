@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-    - name: Run dynamic runner assignment
+    - name: run-dynamic-runner-assignment
       id: set-runner
       uses: ganesh770924/Github-Reusable-actions/.github/workflows/dynamic-runner-assignment.yml@main
       with:
