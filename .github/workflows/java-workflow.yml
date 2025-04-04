@@ -9,14 +9,15 @@ on:
 jobs:
   call-dynamic-runner-assignment:
     runs-on: ubuntu-latest
-    outputs:
-      runner: ${{ steps.set-runner.outputs.runner }}
+    
     steps:
     - name: Run dynamic runner assignment
       id: set-runner
       uses: ganesh770924/Github-Reusable-actions/.github/workflows/dynamic-runner-assignment.yml@main
       with:
         repo: ${{ github.repository }}
+    outputs:
+      runner: ${{ steps.set-runner.outputs.runner }}
     
       
   checkout-code:
