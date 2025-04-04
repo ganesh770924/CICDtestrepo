@@ -26,11 +26,11 @@ jobs:
     with:
       runner: ${{ needs.call-dynamic-runner-assignment.outputs.runner }}
 
-  setup-jdk:
-    needs: checkout-code
-    uses: ganesh770924/Github-Reusable-actions/.github/workflows/setup-jdk.yml@main
-    with:
-      java-version: '11'
+  # setup-jdk:
+  #   needs: checkout-code
+  #   uses: ganesh770924/Github-Reusable-actions/.github/workflows/setup-jdk.yml@main
+  #   with:
+  #     java-version: '11'
   
   # build-with-gradle:
   #   needs: [checkout-code,setup-jdk]
@@ -41,11 +41,11 @@ jobs:
       
   
 
-  build-with-maven:
-    needs: setup-jdk
-    uses: ganesh770924/Github-Reusable-actions/.github/workflows/build-with-maven.yml@main
-    with:
-      pom-file-path: 'pom.xml'
+  # build-with-maven:
+  #   needs: setup-jdk
+  #   uses: ganesh770924/Github-Reusable-actions/.github/workflows/build-with-maven.yml@main
+  #   with:
+  #     pom-file-path: 'pom.xml'
 
   # run-unit-tests:
   #   needs: build-with-maven
