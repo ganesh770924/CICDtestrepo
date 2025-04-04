@@ -16,8 +16,8 @@ jobs:
       uses: ganesh770924/Github-Reusable-actions/.github/workflows/dynamic-runner-assignment.yml@main
       with:
         repo: ${{ github.repository }}
-    outputs:
-      runner: ${{ steps.set-runner.outputs.runner }}
+    # outputs:
+    #   runner: ${{ steps.set-runner.outputs.runner }}
     
       
   # checkout-code:
